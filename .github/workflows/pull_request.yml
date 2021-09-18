@@ -7,19 +7,19 @@ jobs:
   build_and_test:
   runs-on: ubuntu-lastest
   steps:
-  - name: Validame el repositorio
-    use: actions/ckeckout@v2
+    - name: Validame el repositorio
+      use: actions/ckeckout@v2
 
-  - name: Validar python
-    uses: actions/setup.python@v2
-    with:
-      python-version:"3.9.6"
-      architecture:"x64"
+    - name: Validar python
+      uses: actions/setup.python@v2
+      with:
+        python-version:"3.9.6"
+        architecture:"x64"
 
-  - name: Instalar librerias
-    run: pip3 install -r requeriments.txt
+    - name: Instalar librerias
+      run: pip3 install -r requeriments.txt
 
-  - name: Correr los test
-    run: python3 -m unittest -v
+    - name: Correr los test
+      run: python3 -m unittest -v
       
     
