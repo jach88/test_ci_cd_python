@@ -35,6 +35,6 @@ class TestActividadesController(TestCase):
             '/actividades',json={'actividadNombre': 'Hacer la tarea de backend'})
 
         self.assertEqual(respuesta.status_code,201)
-        self.asserisn(respuesta.json)
+        self.assertIsNotNone(respuesta.json)
         
     
