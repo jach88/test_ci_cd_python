@@ -8,10 +8,10 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Validame el repositorio
-        uses: actions/ckeckout@v2
+        uses: actions/checkout@v2
 
       - name: Validar python
-        uses: actions/setup.python@v2
+        uses: actions/setup-python@v2
         with:
           python-version: "3.9.6"
           architecture: "x64"
