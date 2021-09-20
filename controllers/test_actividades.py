@@ -1,4 +1,3 @@
-from flask.typing import ResponseValue
 from app import app
 from unittest import TestCase
 
@@ -21,4 +20,21 @@ class TestActividadesController(TestCase):
                 "actividadId":3,
                 "actividadNombre":"Ir al cumpleaños"
             }]))
+
         self.assertEqual(respuesta.status_code,201)
+    
+    def test_fail_post_actividades(self):
+        respuesta = self.app.post('/actividades')
+
+        self.assertEqual(respuesta.status_code,400)
+        self.assertDictEqual(respuesta.json, dict(
+            message={'actividadNombre':'Falta la actividadNombre'}))
+    
+    def test_post_actividades(self):
+        respuesta = self.app.post(
+            '/actividades',json={'actividadNombre': 'Hacer la tarea de backend'})
+
+        self.assertEqual(respuesta.status_code,201)
+        self.asserisn(respuesta.json)
+        
+    

@@ -1,0 +1,11 @@
+autopep8==1.5.7
+backports.entry-points-selectable==1.1.0
+camelcase==0.2
+distlib==0.3.2
+filelock==3.0.12
+mysql-connector-python==8.0.26
+platformdirs==2.3.0
+pycodestyle==2.7.0
+six==1.16.0
+toml==0.10.2
+virtualenv==20.8.0
