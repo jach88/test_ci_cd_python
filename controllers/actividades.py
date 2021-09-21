@@ -1,8 +1,7 @@
 
 from flask_restful import Resource, reqparse
 
-
-serializador = reqparse.RequestParser(bundle_errors=True)
+serializador = reqparse.RequestParser()
 serializador.add_argument(
     'actividadNombre',
     required=True,
@@ -27,16 +26,16 @@ class ActividadesController(Resource):
                 "actividadNombre":"Ir al cumpleaños"
             }]
         },201
-    
+
     def post(self):
-        data:dict = serializador.parse_args()
-        #logica para registrar la actividad en la bd
-        actividadCreada ={
-            "actividadId":50,
+        data: dict = serializador.parse_args()
+        # logica para registrar la actividad en la bd
+        # ...
+        actividadCreada = {
+            "actividadId": 50,
             "actividadNombre": data.get('actividadNombre')
         }
         return {
             "message": "actividad creada exitosamente",
-            "content": actividadCreada            
-        },201
-
+            "content": actividadCreada
+        }, 201

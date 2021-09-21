@@ -5,6 +5,7 @@ on:
       - main
 jobs:
   build_and_test:
+<<<<<<< HEAD
   runs-on: ubuntu-lastest
   steps:
   - name: Validame el repositorio
@@ -21,5 +22,23 @@ jobs:
 
   - name: Correr los test
     uses: python3 -m unittest -v
+=======
+    runs-on: ubuntu-latest
+    steps:
+      - name: Validame el repositorio
+        uses: actions/checkout@v2
+
+      - name: Validar python
+        uses: actions/setup-python@v2
+        with:
+          python-version: "3.9.6"
+          architecture: "x64"
+
+      - name: Instalar librerias
+        run: pip3 install -r requirements.txt
+
+      - name: Correr los test
+        run: python3 -m unittest -v
+>>>>>>> 59c749a52ce3e98d37a62e746fb5a55adddf1aab
       
     
